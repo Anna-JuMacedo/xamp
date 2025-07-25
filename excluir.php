@@ -1,24 +1,20 @@
 <?php
 require_once 'conexao.php';
+require_once 'classebase.php';
 
-class ClasseBase {
-    protected $conexao;
-    protected $nome_tabela;
-    public $id;
+if (isset($_GET['nome']) && isset($_GET['tabela'])) {
+    $nome = $_GET['nome'];
+    $tabela = $_GET['tabela'];
 
-    public function __construct($conexao, $nome_tabela) {
-        $this->conexao = $conexao;
-        $this->nome_tabela = $nome_tabela;
+    $obj = new ClasseBase($conexao, $tabela);
+    $obj->nome = $nome;
+
+    if ($obj->excluir()) {
+        echo "Registro <strong>$nome</strong> excluído com sucesso.";
+    } else {
+        echo "Erro ao excluir o registro. Verifique se a tabela é permitida ou se o nome existe.";
     }
-
-    public function excluir() {
-        $query = "DELETE FROM " . $this->nome_tabela . " WHERE id = :id";
-        $stmt = $this->conexao->prepare($query);
-
-        $this->id = htmlspecialchars(strip_tags($this->id));
-        $stmt->bindParam(':id', $this->id);
-
-        return $stmt->execute();
-    }
+} else {
+    echo "Parâmetros inválidos.";
 }
 ?>

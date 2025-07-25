@@ -4,7 +4,7 @@ class Pessoa {
     // Define a classe Pessoa
 
     private $conexao; // Armazena a conexão com o banco de dados
-    private $nome_tabela = "pessoa"; // Nome da tabela usada no banco
+    private $nome_tabela = "pessoas"; // Nome da tabela usada no banco
 
     public $id;     // ID da pessoa 
     public $nome;   // Nome da pessoa 

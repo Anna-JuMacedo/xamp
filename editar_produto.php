@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="text" name="nome" id="nome" value="<?php echo htmlspecialchars($dadosProduto['nome']); ?>" required>
 
                 <label for="preco">Preço:</label>
-                <input type="number" step="0.01" name="preco" id="preco" value="<?php echo htmlspecialchars($dadosProduto['preco']); ?>" required>
+                <input type="number" step="any" name="preco" id="preco" value="<?php echo htmlspecialchars($dadosProduto['preco']); ?>" required>
 
                 <input type="submit" name="atualizar" value="Atualizar Produto">
             </form>
