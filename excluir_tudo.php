@@ -24,17 +24,41 @@ if (isset($_GET['id']) && isset($_GET['tabela'])) {
 <head>
     <meta charset="UTF-8">
     <title>Excluir Registros</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Excluir Pessoa</h2>
-    <a href="excluir.php?tabela=pessoa&id=1" onclick="return confirm('Deseja excluir a pessoa com ID 1?')">
-        <button>Excluir Pessoa ID 1</button>
-    </a>
+    <div class="container">
+        <header>
+            <h1>Excluir Registros</h1>
+        </header>
 
-    <h2>Excluir Produto</h2>
-    <a href="excluir.php?tabela=produto&id=2" onclick="return confirm('Deseja excluir o produto com ID 2?')">
-        <button>Excluir Produto ID 2</button>
-    </a>
+        <section>
+            <h2>Excluir Pessoa</h2>
+            <div class="btn-container">
+                <a href="excluir.php?tabela=pessoa&id=1" onclick="return confirm('Deseja excluir a pessoa com ID 1?')">
+                    <button class="excluir-btn">Excluir Pessoa ID 1</button>
+                </a>
+                <a href="excluir.php?tabela=pessoa&id=2" onclick="return confirm('Deseja excluir a pessoa com ID 2?')">
+                    <button class="excluir-btn">Excluir Pessoa ID 2</button>
+                </a>
+                <a href="excluir.php?tabela=pessoa&id=3" onclick="return confirm('Deseja excluir a pessoa com ID 3?')">
+                    <button class="excluir-btn">Excluir Pessoa ID 3</button>
+                </a>
+            </div>
+
+            <h2>Excluir Produto</h2>
+            <div class="btn-container">
+                <a href="excluir.php?tabela=produto&id=1" onclick="return confirm('Deseja excluir o produto com ID 1?')">
+                    <button class="excluir-btn">Excluir Produto ID 1</button>
+                </a>
+                <a href="excluir.php?tabela=produto&id=2" onclick="return confirm('Deseja excluir o produto com ID 2?')">
+                    <button class="excluir-btn">Excluir Produto ID 2</button>
+                </a>
+                <a href="excluir.php?tabela=produto&id=3" onclick="return confirm('Deseja excluir o produto com ID 3?')">
+                    <button class="excluir-btn">Excluir Produto ID 3</button>
+                </a>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
-
